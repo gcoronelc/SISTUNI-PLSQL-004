@@ -1,0 +1,48 @@
+
+CREATE OR REPLACE FUNCTION scott.fnDoble
+( p_dato NUMBER )
+RETURN NUMBER
+IS
+  v_doble NUMBER(8);
+BEGIN
+  v_doble := p_dato * 2;
+  RETURN v_doble;
+END;
+
+
+select * from v$session where username = 'SYSTEM';
+
+ALTER SYSTEM KILL SESSION '131,1595' IMMEDIATE;
+
+-- Sentencia de asignacion
+-- variable := expresion
+
+DECLARE
+  v_algo NUMBER;
+BEGIN
+  v_algo := 6 * FNDOBLE( 5 ) + FNSUMA(20,60);
+  dbms_output.PUT_LINE('ALGO: ' || v_algo );
+END;
+
+
+CREATE OR REPLACE FUNCTION SCOTT.FNSALARIO
+( P_CODIGO NUMBER )
+RETURN NUMBER
+IS
+  V_SALARIO NUMBER;
+BEGIN
+  SELECT SAL INTO V_SALARIO
+  FROM SCOTT.EMP
+  WHERE EMPNO = P_CODIGO;
+  RETURN V_SALARIO;
+END;
+
+SELECT * FROM SCOTT.EMP;
+
+SELECT SCOTT.FNSALARIO(7369) FROM DUAL;
+
+
+
+
+
+
