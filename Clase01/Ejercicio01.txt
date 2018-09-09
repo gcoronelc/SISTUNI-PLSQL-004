@@ -1,0 +1,23 @@
+-- Ejercicios
+-- ---------
+
+/*
+Ejercicio 1
+Desarrollar una función para calcular
+el promedio de un alumnos.
+Son 4 notas, ex. parcial y ex. final.
+*/
+
+/*
+Ejercicio 2
+Desarollar un procedimiento para 
+detarminar el importe de una venta.
+Si la venta es al por mayor se hace
+un descuento de 7% sobre el precio 
+de venta.
+Debe retornar el descuento y el imprte
+de la venta.
+*/
+
+
+
