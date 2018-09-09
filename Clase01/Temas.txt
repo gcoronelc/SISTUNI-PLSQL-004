@@ -1,0 +1,2 @@
+1.- Instalación de GIT
+2.- Clonado el repositorio
