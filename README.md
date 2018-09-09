@@ -1,11 +1,11 @@
-![ORACLE PL-SQL](https://raw.githubusercontent.com/gcoronelc/SISTUNI-PLSQL-004/master/img/plsql-04.jpg)
+![ORACLE PL-SQL](https://raw.githubusercontent.com/gcoronelc/SISTUNI-PLSQL-004/master/img/plsql-04-2.jpg)
 
 
 # ORACLE PL-SQL
 
 - Lugar: SistemasUNI
 - Horario: DOMINGO DE 08 A 14 HORAS
-- Inicio: 02-SET-2018
+- Inicio: 09-SET-2018
 - Dirección: https://goo.gl/maps/98vwAt9NZMU2
 - Contenido: 
 - Página: https://github.com/gcoronelc/SISTUNI-PLSQL-004
