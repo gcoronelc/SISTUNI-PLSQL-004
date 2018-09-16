@@ -44,3 +44,76 @@ END;
 
 CALL SCOTT.PR_SHOW_EMP(9999);
 
+
+
+create or replace procedure scott.UpdateSalEmp
+(codigo scott.emp.empno%Type, salario scott.emp.sal%Type)
+is
+    cont Number;
+begin
+    
+    select count(*) into cont
+    from scott.emp where Empno = codigo;
+    
+    if(cont != 1) then
+        raise_application_error(-20000,'Codigo incorrecto.');
+    end if;
+    
+    update scott.Emp set Sal = salario
+    where Empno=codigo;
+    
+    commit;
+    
+    dbms_output.PUT_LINE('proceso OK');
+    
+EXCEPTION
+
+  when others then
+        dbms_output.put_line('Codigo no existe');
+        raise_application_error(-20000,'Error en los datos.');
+end;
+
+SELECT * FROM scott.Emp;
+
+call scott.UpdateSalEmp(7369, 890 );
+
+
+
+
+
+create or replace procedure scott.UpdateSalEmp
+(codigo scott.emp.empno%Type, salario scott.emp.sal%Type)
+is
+    cont Number;
+begin
+    
+    select count(*) into cont
+    from scott.emp where Empno = codigo;
+    
+    if(cont != 1) then
+        raise_application_error(-20000,'Codigo incorrecto.');
+    end if;
+    
+    update scott.Emp set Sal = salario
+    where Empno=codigo;
+    
+    commit;
+    
+    dbms_output.PUT_LINE('proceso OK');
+ 
+EXCEPTION
+
+  when others then
+    dbms_output.put_line('Codigo no existe');
+    raise_application_error(sqlcode,sqlerrm);
+end;
+
+SELECT * FROM scott.Emp;
+
+call scott.UpdateSalEmp(7369, 890 );
+
+
+SELECT * FROM SCOTT.EMP FOR UPDATE;
+
+ROLLBACK;
+

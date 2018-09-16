@@ -10,7 +10,8 @@ CLASE 02
 7.- Estructuras de control
 8.- Registros
 9.- Excepciones
-10.- 
+10.- Transacciones - Falta demostracion
+
 
 
 
