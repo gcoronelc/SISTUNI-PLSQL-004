@@ -60,8 +60,56 @@ BEGIN
 END;
 
 
+
+
 /*
 Ejercicio 01
+Desarrollar una función que permita obtener
+un numero de 0 al 9 en letras.
+*/
+
+/*
+Ejercicio 02
+Desarrollar una función que permita obtener
+un numero de 10 al 19 en letras.
+*/
+
+
+CREATE OR REPLACE PROCEDURE scott.prDemoWhile( p_num NUMBER )
+IS
+  v_cont NUMBER := 1;
+BEGIN
+  WHILE (v_cont <= p_num) LOOP
+    dbms_output.PUT_LINE('PERU Campeon');
+    v_cont := v_cont + 1;
+  END LOOP;
+END;
+
+CALL scott.prDemoWhile(15);
+
+
+CREATE OR REPLACE PROCEDURE prDemofor( p_tope NUMBER )
+IS
+BEGIN
+  FOR v_cont IN REVERSE 1 .. p_tope LOOP
+    dbms_output.PUT_LINE( v_cont || '.- PERU Campeon');
+  END LOOP;
+END;
+
+
+call prDemofor(5);
+
+/*
+5.- PERU Campeon
+4.- PERU Campeon
+3.- PERU Campeon
+2.- PERU Campeon
+1.- PERU Campeon
+*/
+
+
+/*
+Ejercicio 03
 Desarrollar las siguientes funciones:
 - fnMCD: Calcula el MCD de dos números
 - fnMCM: Calcula el MCM de dos números
