@@ -1,4 +1,3 @@
--- Revisar
 
 CREATE OR REPLACE function scott.nLetras(
 p_numero NUMBER
@@ -36,6 +35,11 @@ BEGIN
     IF v_valida > 1 then 
     
     v_letra:= CASE MOD(p_numero,10)
+                 WHEN 1 THEN 'once'
+                 WHEN 2 THEN 'doce'
+                 WHEN 3 THEN 'Trece'
+                 WHEN 4 THEN 'Catorce'
+                 WHEN 5 THEN 'Quince'
                  WHEN 6 THEN 'Diez y Seis'
                  WHEN 7 THEN 'Diez y Siete'
                  WHEN 8 THEN 'Diez y Ocho'
@@ -48,8 +52,7 @@ BEGIN
 
 END;
 
-SELECT nLetras(8) FROM DUAL;
-
+SELECT nLetras(11) FROM dual
 
 
 
