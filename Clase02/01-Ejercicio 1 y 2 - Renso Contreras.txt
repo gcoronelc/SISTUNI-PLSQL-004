@@ -1,0 +1,96 @@
+/*
+EJERCICIO 01
+DESARROLLAR LAS SIGUIENTES FUNCIONES:
+-fnMCD: Calcula el MCD de dos numeros
+-fnMCM: Calcula el MCM de dos numeros
+*/
+
+
+---fnMCD: Calcula el MCD de dos numero
+
+-- Revisar solucion
+
+CREATE OR REPLACE FUNCTION FNMCD
+(NUM1 NUMBER, NUM2 NUMBER)
+RETURN NUMBER
+IS
+    CONT NUMBER := 0;
+    MAXN NUMBER;
+    N1 NUMBER;
+    N2 NUMBER;
+    MULT NUMBER := 1;
+BEGIN
+    N1 := NUM1;
+    N2 := NUM2;
+    
+        IF N1 >N2 THEN
+            MAXN := N1;
+        ELSE
+            MAXN := N2;
+        END IF;
+        
+        while (CONT <= MAXN) loop 
+         
+          IF MOD(N1,CONT) = 0 AND MOD(N2,CONT) = 0 THEN
+                MULT := MULT*CONT;
+                N1 := N1/CONT;
+                N2 := N2/CONT;
+          ELSIF MOD(N1,CONT) = 0 THEN
+                MULT := MULT*CONT;
+                N1 := N1/CONT;
+          ELSIF MOD(N2,CONT) = 0 THEN
+                MULT := MULT*CONT;
+                N2 := N2/CONT;
+          END IF;      
+
+          CONT := CONT + 1;               
+        END LOOP;     
+    RETURN MULT;
+END;
+
+
+begin
+  DBMS_OUTPUT.PUT_LINE('EL MCD ES : ' || FNMCD(15,20));
+end;
+
+
+
+---fnMCM: Calcula el MCM de dos numeros
+-- Revisar solucion
+
+CREATE OR REPLACE FUNCTION FNMCM
+(NUM1 NUMBER, NUM2 NUMBER)
+RETURN NUMBER
+IS
+    CONT NUMBER := 0;
+    MAXN NUMBER;
+    N1 NUMBER;
+    N2 NUMBER;
+    MULT NUMBER := 1;
+BEGIN
+    N1 := NUM1;
+    N2 := NUM2;
+    
+        IF N1 >N2 THEN
+            MAXN := N1;
+        ELSE
+            MAXN := N2;
+        END IF;
+        
+        while (CONT <= MAXN) loop 
+         
+          IF MOD(N1,CONT) = 0 AND MOD(N2,CONT) = 0 THEN
+                MULT := MULT*CONT;
+                N1 := N1/CONT;
+                N2 := N2/CONT;
+          END IF;      
+
+          CONT := CONT + 1;               
+        END LOOP;     
+    RETURN MULT;
+END;
+
+
+begin
+   DBMS_OUTPUT.PUT_LINE('EL MCM ES : ' || FNMCM(15,20));
+end;

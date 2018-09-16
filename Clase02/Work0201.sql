@@ -115,12 +115,36 @@ Desarrollar las siguientes funciones:
 - fnMCM: Calcula el MCM de dos números
 */
 
+/*
+TABLA TEMPORAL
+*/
+
+CREATE GLOBAL TEMPORARY TABLE scott.test(
+  ID NUMBER PRIMARY KEY,
+  dato VARCHAR2(50)
+) ON COMMIT PRESERVE ROWS;
+
+CREATE SEQUENCE sq_test;
+
+SELECT * FROM scott.test;
 
 
+CREATE OR REPLACE PROCEDURE pr_llena_tabla
+(p_dato VARCHAR2, p_n number)
+IS
+BEGIN
+  DELETE FROM scott.test;
+  FOR i IN 1 .. p_n LOOP
+    INSERT INTO scott.test(ID,dato) 
+    VALUES(scott.sq_test.nextval, p_dato);
+  END LOOP;  
+  COMMIT;
+END;
 
 
+call pr_llena_tabla('Ya es tiempo del break.', 20 );
 
-
+SELECT * FROM scott.test;
 
 
 

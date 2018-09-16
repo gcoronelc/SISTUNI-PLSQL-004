@@ -1,0 +1,22 @@
+/*MCM*/
+
+
+create or replace function fnMCM
+(p_n1 number,  p_n2 number) return number
+
+IS
+
+p_num1 number:=p_n1 ;  
+p_num2 number:=p_n2;
+p_mcm number;  
+p_a number; 
+BEGIN
+SELECT fnMCD(p_num1,200) into p_a FROM DUAL;
+
+        p_mcm := (p_num1 / (p_a)) * p_num2;
+return p_mcm;
+END;
+
+
+
+SELECT fnMCM(15,20) FROM DUAL;

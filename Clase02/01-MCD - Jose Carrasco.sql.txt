@@ -1,0 +1,31 @@
+
+/*FUNCION MCD*/
+create or replace function fnMCD
+(p_n1 number,  p_n2 number) return number
+
+IS
+
+p_num1 number:=p_n1 ;  
+p_num2 number:=p_n2;
+p_a number;  
+
+BEGIN
+
+If (p_num1 < p_num2) Then
+            p_a := p_num2;
+            p_num2 := p_num1;
+            p_num1 := p_a;
+End If;
+ 
+
+ While (p_num1 Mod p_num2 <> 0) LOOP
+            p_a := p_num1;
+            p_num1 := p_num2;
+            p_num2 := p_a Mod p_num2;
+        End LOOP;
+        
+return p_num2;
+END;
+
+SELECT fnMCD(15,20) FROM DUAL;
+
