@@ -1,0 +1,11 @@
+1.- Instalación de GIT
+2.- Clonar el repositorio del Curso
+3.- Clonar el repositorio de modelo de datos: Database
+4.- Crear los esquemas ejemplo
+5.- SQL Developer
+6.- Lección 04
+7.- 
+
+
+
+
