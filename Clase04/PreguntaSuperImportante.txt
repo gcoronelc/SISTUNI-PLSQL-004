@@ -1,5 +1,6 @@
 Crear un modelo de ventas.
 Crear un PAQUETE/SP para registrar 
 una venta, puede tener 
-1 item o 1000 items.
+1 item o mas (10, 15, 20, 30, 40, etc) items.
+
 
