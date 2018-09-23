@@ -23,6 +23,10 @@ CLASE 03
 15.- Cláusula RETURNING
 16.- Enlaces a bases de datos
 17.- Sinónimos
+18.- Cursores
+19.- Funciones que retornan cursores
+20.- Funciones que retornan tablas
+
 
 
 
