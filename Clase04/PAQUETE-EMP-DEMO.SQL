@@ -1,0 +1,24 @@
+
+
+DECLARE
+  V_DEPTNO NUMBER;
+  V_CURSOR PKG_EMP.T_CURSOR;
+  V_EMPNO  NUMBER;
+  V_ENAME VARCHAR2(100);
+  V_SAL NUMBER;
+BEGIN
+  V_DEPTNO := 10;
+  V_CURSOR := NULL;
+
+  PKG_EMP.GET_EMPS (  V_DEPTNO, V_CURSOR) ;  
+  
+  LOOP
+        FETCH V_CURSOR INTO V_EMPNO, V_ENAME, V_SAL;
+        EXIT WHEN V_CURSOR%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE(v_empno || ' - ' || v_ename || ' - ' || v_sal);
+  END LOOP;
+  
+  CLOSE V_CURSOR;
+  
+END;
+
